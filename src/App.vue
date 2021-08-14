@@ -7,6 +7,8 @@
                 <draggable
                     :list="todos"
                     group="todosApp"
+                    ghostClass="on-drag"
+                    animation="400"
                 >
                         <todo-item v-for="todo in todos" :key="todo.id" :item="todo"></todo-item>
                 </draggable>
@@ -18,6 +20,8 @@
                 <draggable
                     :list="inProgress"
                     group="todosApp"
+                    ghostClass="on-drag"
+                    animation="400"
                 >
                         <todo-item v-for="todo in inProgress" :key="todo.id" :item="todo"></todo-item>
                 </draggable>
@@ -30,6 +34,8 @@
                     <draggable
                         :list="completed"
                         group="todosApp"
+                        ghostClass="on-drag"
+                        animation="400"
                     >
                             <todo-item v-for="todo in completed" :key="todo.id" :item="todo"></todo-item>
                     </draggable>
@@ -79,5 +85,11 @@ export default {
     display:flex;
     justify-content:center;
     margin: 50px 0;
+}
+
+.on-drag{
+    background-color: #4833c0;
+    color: #fff;
+    z-index: 10;
 }
 </style>
